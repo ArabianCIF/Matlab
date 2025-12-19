@@ -6,28 +6,32 @@ fukuoka_temp = table2timetable(DT);
 temp_2021_20 = movmean(fukuoka_temp.temp_2021,20);
 temp_2022_20 = movmean(fukuoka_temp.temp_2022,20);
 temp_2023_20 = movmean(fukuoka_temp.temp_2023,20);
-
-% 問題3
+%q3
 figure
-
 subplot(3,1,1)
+plot(fukuoka_temp.day_time_2021, fukuoka_temp.temp_2021);
 hold on
-ylim([20 40])
-plot(fukuoka_temp.day_time_2021, fukuoka_temp.temp_2021, 'r-')
-plot(fukuoka_temp.day_time_2021, temp_2021_20, 'b-')
+plot(fukuoka_temp.day_time_2021, temp_2021_20);
+ylim([20 40]);
+title('2021 Fukuoka Temperature');
 hold off
+
 subplot(3,1,2)
+plot(fukuoka_temp.day_time_2022, fukuoka_temp.temp_2022);
 hold on
-ylim([20 40])
-plot(fukuoka_temp.day_time_2022, fukuoka_temp.temp_2022, 'g-')
-plot(fukuoka_temp.day_time_2022, temp_2022_20, 'b-')
+plot(fukuoka_temp.day_time_2022, temp_2022_20);
+ylim([20 40]);
+title('2022 Fukuoka Temperature');
 hold off
+
 subplot(3,1,3)
+plot(fukuoka_temp.day_time_2023, fukuoka_temp.temp_2023);
 hold on
-plot(fukuoka_temp.day_time_2023, fukuoka_temp.temp_2023, 'k-')
-plot(fukuoka_temp.day_time_2023, temp_2023_20, 'b-')
-ylim([20 40])
+plot(fukuoka_temp.day_time_2023, temp_2023_20);
+ylim([20 40]);
+title('2023 Fukuoka Temperature');
 hold off
+
 
 % ここまでに書いたコードの内容がpng形式で"3_2_Q3_practice"という名前で保存されます
 saveas(gcf, '3_2_Q3_practice.png');
@@ -50,22 +54,19 @@ diff_temp_2021 = diff(fukuoka_temp.temp_2021);
 diff_temp_2022 = diff(fukuoka_temp.temp_2022);
 diff_temp_2023 = diff(fukuoka_temp.temp_2023);
 figure
-
 subplot(3,1,1)
-hold on
-ylim([-5 5])
-plot(fukuoka_temp.day_time_2021(2:end), diff_temp_2021, 'r-')
-hold off
+plot(fukuoka_temp.day_time_2021(2:end), diff_temp_2021);
+ylim([-5 5]);
+title('2021 Fukuoka Temperature Difference');
 subplot(3,1,2)
-hold on
-ylim([-5 5])
-plot(fukuoka_temp.day_time_2022(2:end), diff_temp_2022, 'g-')
-hold off
+plot(fukuoka_temp.day_time_2022(2:end), diff_temp_2022);
+ylim([-5 5]);
+title('2022 Fukuoka Temperature Difference');
 subplot(3,1,3)
-hold on
-plot(fukuoka_temp.day_time_2023(2:end), diff_temp_2023, 'b-')
-ylim([-5 5])
-hold off
+plot(fukuoka_temp.day_time_2023(2:end), diff_temp_2023);
+ylim([-5 5]);
+title('2023 Fukuoka Temperature Difference');
+
 
 
 % ここまでに書いたコードの内容がpng形式で"3_2_Q4_practice"という名前で保存されます
