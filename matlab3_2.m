@@ -14,15 +14,18 @@ subplot(3,1,1)
 hold on
 ylim([20 40])
 plot(fukuoka_temp.day_time_2021, fukuoka_temp.temp_2021, 'r-')
+plot(fukuoka_temp.day_time_2021, temp_2021_20, 'b-')
 hold off
 subplot(3,1,2)
 hold on
 ylim([20 40])
 plot(fukuoka_temp.day_time_2022, fukuoka_temp.temp_2022, 'g-')
+plot(fukuoka_temp.day_time_2022, temp_2022_20, 'b-')
 hold off
 subplot(3,1,3)
 hold on
-plot(fukuoka_temp.day_time_2023, fukuoka_temp.temp_2023, 'b-')
+plot(fukuoka_temp.day_time_2023, fukuoka_temp.temp_2023, 'k-')
+plot(fukuoka_temp.day_time_2023, temp_2023_20, 'b-')
 ylim([20 40])
 hold off
 
